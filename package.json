@@ -41,11 +41,11 @@
     "postinstall": "bower install",
     "test": "write-good src/my/posts/**/*.md",
     "build": "node build.js",
-    "deploy": "npm run dist-build && cd build && git init . && git add . && git commit -m \"Deploy Updates\"; git push \"git@github.com:modernmillers/modernmillers.github.io.git\" master:gh-pages --force && rm -rf .git"
+    "deploy": "npm run dist-build && cd build && git init . && git add . && git commit -m \"Deploy Updates\"; git push \"git@github.com:modernmillers/.com.git\" master:gh-pages --force && rm -rf .git"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/modernmillers/site.com.git"
+    "url": "https://github.com/modernmillers/.com.git"
   },
   "author": {
     "name": "Lauren Hays",
