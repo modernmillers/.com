@@ -1,0 +1,67 @@
+extends layout
+
+block prepend title
+    | #{title + " • "}
+
+block prepend header
+    a.home.icon-home.back-to-home(href='/', title=blog.title)
+
+block header
+    header.header.container
+        small.header-metadata
+            time.timestamp(datetime=date)= moment(date).format('MMMM D, YYYY')
+        h1.header-title= title
+
+block content
+    article.content-article!= contents
+
+    div.row.hidden
+        div(class="col-lg-12 text-center")
+            div(id="carousel-example-generic" class="carousel slide")
+                ol(class="carousel-indicators hidden-xs")
+                    li(data-target="#carousel-example-generic" data-slide-to="0" class="active")
+                    li(data-target="#carousel-example-generic" data-slide-to="1")
+                    li(data-target="#carousel-example-generic" data-slide-to="2")
+                div.carousel-inner
+                    div(class="item active")
+                        img(class="img-responsive img-full" src="assets/img/min/slide-1.jpg" alt="")
+                    div(class="item")
+                        img(class="img-responsive img-full" src="assets/img/min/slide-2.jpg" alt="")
+                    div(class="item")
+                        img(class="img-responsive img-full" src="assets/img/min/slide-3.jpg" alt="")
+                    a(class="left carousel-control" href="#carousel-example-generic" data-slide="prev")
+                        i(class="fa fa-prev")
+                    a(class="left carousel-control" href="#carousel-example-generic" data-slide="next")
+                        i(class="fa fa-next")
+
+    if integrations.twitter
+        div.content-share
+            a.twitter-follow-button(href='https://twitter.com/' + integrations.twitter, data-show-count="false")
+                | Follow @#{integrations.twitter}
+            a.twitter-share-button(href='https://twitter.com/share', data-url=fullUri, data-text=title, data-via=integrations.twitter)
+                | Tweet
+        script.
+            !function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                if (!d.getElementById(id)) {
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = p + '://platform.twitter.com/widgets.js';
+                    fjs.parentNode.insertBefore(js, fjs);
+                }
+            }(document, 'script', 'twitter-wjs');
+
+    <!-- discus integration -->
+    if integrations.disqus
+        div#disqus_thread
+        script.
+            //- Disqus code snippet
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//#{integrations.disqus}.disqus.com / embed.js
+            ';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })
+            ();

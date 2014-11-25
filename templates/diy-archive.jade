@@ -1,0 +1,24 @@
+extends layout
+
+block content
+
+    each file, i in paginate.files
+
+        article.content
+        header.content-header
+          h2.content-title
+            a(href='/' + file.path)= file.title
+          div.header-metadata
+            time.timestamp(datetime=file.date)= moment(file.date).format('MMMM D, YYYY')
+          img(class="", src="#{file.banner}")
+          section.content-article!= file.snippet
+
+
+    if paginate.prev
+        a.btn.navigation-next(href='/' + paginate.prev.path)
+            | Newer&nbsp;&nbsp;
+            i.icon-right-dir
+    if paginate.next
+        a.btn.navigation-prev(href='/' + paginate.next.path)
+            i.icon-left-dir
+            | &nbsp;&nbsp;Older

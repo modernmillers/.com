@@ -1,0 +1,39 @@
+extends layout
+
+block content
+
+    div.collection
+        if paginate
+            each file, i in paginate.files
+                if i == 0
+                    div.featured.col-sm-12
+                        div.folded
+                            h2 Latest
+                        header.content-header
+                            a(href='/' + file.path, style="background-image: url(#{file.banner})")
+                            h2.content-title
+                                span= file.title
+                            div.header-metadata
+                                time.timestamp(datetime=file.date)= moment(file.date).format('MMMM D, YYYY')
+                    // section.content-article!= file.snippet
+                else
+                    div.non-featured.col-sm-6
+                        article.content
+                        header.content-header
+                            a(href='/' + file.path, style="background-image: url(#{file.banner})")
+                            h2.content-title
+                                span= file.title
+                            div.header-metadata
+                                time.timestamp(datetime=file.date)= moment(file.date).format('MMMM D, YYYY')
+                        //   section.content-article!= file.snippet
+
+
+    if paginate.previous
+        a.btn.navigation-next(href='/' + paginate.previous.path)
+            | Newer&nbsp;&nbsp;
+            i.icon-right-dir
+
+    if paginate.next
+        a.btn.navigation-prev(href='/' + paginate.next.path)
+            i.icon-left-dir
+            | &nbsp;&nbsp;Older

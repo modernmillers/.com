@@ -1,0 +1,119 @@
+.img-overlay {
+  position : relative;
+  margin-bottom : 30px;
+
+  .text-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 3em;
+  }
+}
+
+.content-article {
+
+  font-size: 1.2em;
+  letter-spacing: 1.2px;
+  font-weight: 100;
+  margin-bottom : 30px;
+
+  .subheader {
+    font-weight: 300;
+  }
+
+  ul {
+
+    &.image-list {
+      list-style-type : none;
+      padding :0;
+      margin-bottom : 10px;
+      overflow : hidden;
+
+      li {
+
+        &.img-wrapper {
+
+          i {
+            display : none;
+            font-size : 2em;
+            color: white;
+          }
+
+          &:hover {
+            i {
+              display : block;
+              position: absolute;
+              right: 30px;
+              top: 20px;
+            }
+          }
+
+          &.rotate-right {
+            -webkit-transform: rotate(2deg);
+            -moz-transform: rotate(2deg);
+
+            &:hover {
+              -webkit-transform: rotate(0deg);
+              -moz-transform: rotate(0deg);
+            }
+          }
+
+          &.rotate-left {
+            -webkit-transform: rotate(-2deg);
+            -moz-transform: rotate(-2deg);
+
+            &:hover {
+              -webkit-transform: rotate(0deg);
+              -moz-transform: rotate(0deg);
+            }
+          }
+
+          p {
+            &.polaroid {
+              position: absolute;
+              bottom: 30px;
+              text-align: center;
+              margin: auto;
+              width: 93%;
+            }
+          }
+        }
+        img {
+          &.half {
+            width : 50%;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+img {
+  &.polaroid {
+    border: 5px solid white;
+    -webkit-transition: -webkit-transform .15s linear;
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+    -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+    padding-bottom: 60px;
+    margin-bottom : 10px;
+
+    cursor : pointer;
+  }
+}
+
+.content-header {
+
+  img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.main-text {
+  font-size : 1.5em;
+}
+
+#disqus_thread {
+  margin-top : 30px;
+}

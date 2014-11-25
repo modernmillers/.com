@@ -1,0 +1,8 @@
+extends layout
+
+<!-- Update Browser Title -->
+block prepend title
+    | #{title + " • "}
+
+block content
+    article.content-article!= contents

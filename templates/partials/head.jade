@@ -1,0 +1,38 @@
+meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+meta(charset='utf-8')
+meta(name='viewport', content='width=device-width')
+meta(name='description', content=blog.description)
+
+<!-- SEO -->
+meta(name="robots", content="#{seo.robots}")
+link(rel="canonical", href="#{seo.canonical}")
+link(rel='author', href='https://twitter.com/modernmillers')
+
+<!-- Open Graph Protocol -->
+meta(proprty="og:type" content="website")
+meta(proprty="og:url" content="#{seo.canonical}")
+
+if seo.ogp.title
+    meta(proprty="og:title" content="#{seo.ogp.title}")
+else
+    meta(proprty="og:title" content="#{blog.title}")
+
+if snippet
+    meta(proprty="og:description" content="#{snippet}")
+else
+    meta(proprty="og:description" content="#{blog.description}")
+
+if seo.ogp.image
+    meta(proprty="og:image" content="#{seo.ogp.image}")
+else
+    meta(proprty="og:image" content="#{seo.ogp.defaultImage}")
+
+title
+    block title
+        = blog.title
+
+<!-- RSS -->
+link(rel='alternate', href='/feed.xml', type='application/rss+xml', title=blog.description)
+
+<!-- Stylesheets/Fonts -->
+include ./styles.jade

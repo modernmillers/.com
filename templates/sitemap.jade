@@ -1,0 +1,24 @@
+doctype xml
+urlset(xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance",
+       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd",
+       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
+
+    each post in collections.posts
+        url
+            loc= blog.uri + "/" + post.path
+            if post.lastmod
+                lastmod!= moment(post.lastmod).format('YYYY-MM-DD')
+            else
+                lastmod!= moment(post.date).format('YYYY-MM-DD')
+            chandefreq never
+            priority 1.0
+
+    each page in collections.pages
+        url
+            loc= blog.uri + "/" + page.path
+            if page.lastmod
+                lastmo!= moment(page.lastmod).format('YYYY-MM-DD')
+            else
+                lastmod!= moment(page.date).format('YYYY-MM-DD')
+            chandefreq never
+            priority 0.8

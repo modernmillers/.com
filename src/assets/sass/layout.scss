@@ -1,0 +1,317 @@
+
+body {
+  //  font-family           : 'Handlee', cursive;
+  font-family           : "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color      : #ffffff;
+  background-image      : url('../img/min/bg/bg-blue.png');
+  background-repeat     : repeat;
+  background-position   : top center;
+  background-attachment : fixed;
+}
+
+.alt-font {
+  font-family : 'Just Me Again Down Here', cursive;
+}
+
+.alt-color {
+  color : $alt-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform : uppercase;
+  font-weight    : 400;
+  letter-spacing : 1px;
+}
+
+p {
+  font-size      : 1.2em;
+  color          : #000;
+  letter-spacing : 1.2px;
+  font-weight    : 100;
+}
+
+hr {
+  border-color : #999999;
+}
+
+.centered {
+  text-align : center;
+}
+
+.brand {
+  &.small {
+    padding : 0;
+    font-size : 1.4em;
+  }
+}
+
+.weight200 {
+  font-weight : 200;
+}
+
+.inline {
+  display : inline !important;
+}
+
+.brand, .tagline {
+
+  span {
+    font-size : .8em;
+  }
+}
+
+.img-full {
+  min-width : 100%;
+}
+
+.brand-before, .brand-name {
+  text-transform : capitalize;
+}
+
+.brand-before {
+  margin : 15px 0;
+}
+
+.brand-name {
+  margin    : 0;
+  font-size : 4em;
+}
+
+.tagline-divider {
+  margin       : 15px auto 3px;
+  max-width    : 250px;
+  border-color : #999999;
+}
+
+.box {
+  margin-bottom : 20px;
+  padding       : 30px 15px;
+  background    : #fff;
+  border        : 1px solid #eee;
+  overflow      : hidden;
+
+  &.bio {
+    margin-bottom: 30px;
+    overflow: visible;
+    padding-top: 20px;
+    text-align: center;
+    position : relative;
+  }
+
+  &.subscribe {
+    padding-bottom : 15px;
+    border-right   : 1px solid $color;
+    border-top     : 1px solid $color;
+    border-bottom  : 1px solid $color;
+
+    input {
+      padding : 5px;
+    }
+
+    input[type="submit"] {
+      margin-top : 5px;
+    }
+
+  }
+
+  &.main {
+    min-height: 595px;
+  }
+
+  &.ad {
+    margin-bottom : 0;
+
+    p {
+      margin-bottom : 0;
+    }
+  }
+}
+
+.intro-text {
+  text-transform : uppercase;
+  font-size      : 1.25em;
+  font-weight    : 100;
+  letter-spacing : 1px;
+}
+
+.bio, .subscribe {
+  padding-top : 10px;
+
+  .intro-text {
+    margin-top : 0;
+    color      : $alt-color;
+  }
+
+  hr {
+    padding : 0;
+    margin  : 10px 0;
+  }
+
+  img {
+    height: 200px;
+    margin: auto auto 10px auto;
+    border-radius: 200px;
+    border: 2px solid #8acadb;
+  }
+
+  p {
+    font-size : 1.2em;
+  }
+
+}
+
+.img-border {
+  float  : none;
+  margin : 0 auto 0;
+  border : #999999 solid 1px;
+}
+
+footer {
+  background-color : white;
+  border-top       : 2px solid #d0ecf2;
+
+  p {
+    margin      : 0;
+    padding     : 10px 0;
+    font-weight : 300;
+    font-size   : 1em;
+  }
+
+  ul.social {
+    width         : 208px;
+    margin        : 0 auto;
+    padding       : 0;
+    margin-bottom : 5px;
+    position      : relative;
+    bottom        : 0;
+
+    li {
+      a {
+        i {
+          background-color : $alt-color;
+        }
+      }
+    }
+  }
+}
+
+ul.social {
+  list-style-type : none;
+  overflow        : hidden;
+  position        : absolute;
+  bottom          : -30px;
+
+  li {
+    float         : left;
+    margin-right  : 10px;
+    border        : 2px solid #fff;
+    border-radius : 50px;
+
+    a {
+
+      i {
+        font-size     : 1.2em;
+        color         : #fff;
+        background    : $alt-color;
+        padding       : 10px;
+        border        : 1px solid #eee;
+        border-radius : 20px;
+
+        &:hover {
+          background-color : $color;
+        }
+
+        &.fb {
+          padding : 10px 13px;
+        }
+
+        &.pin {
+          padding : 10px 12px;
+        }
+      }
+    }
+  }
+}
+
+.pad20 {
+  padding: 20px;
+}
+
+.light-weight {
+  font-weight : 200;
+}
+
+@media screen and (min-width : 768px) and (max-width : 991px) {
+
+  .bio {
+
+    ul.social {
+      bottom       : -30px;
+      padding-left : 15px;
+
+      li {
+        margin-right : 6px;
+      }
+
+    }
+  }
+
+}
+
+@media screen and (min-width : 768px) {
+
+  .brand {
+    margin           : 0;
+    padding          : 30px 0 10px;
+    text-align       : center;
+    font-size        : 3em;
+    line-height      : normal;
+    background-color : white;
+    color            : #8acadb;
+    font-weight      : 100;
+  }
+
+  .top-divider {
+    margin-top : 0;
+  }
+
+  .img-left {
+    float        : left;
+    margin-right : 25px;
+  }
+
+  .tagline {
+    margin           : 0;
+    padding          : 0 0 40px;
+    text-align       : center;
+    text-transform   : uppercase;
+    font-size        : 1.25em;
+    font-weight      : 100;
+    letter-spacing   : 3px;
+    background-color : white;
+    color            : #8acadb;
+  }
+
+}
+
+.modal-header {
+  min-height : 16.43px;
+  padding    : 10px 15px 0 15px;
+}
+
+.modal-title {
+  font-weight : 100;
+}
+
+.sidebar {
+  padding: 0;
+
+  .sidebar-content {
+
+    transition: all 0.5s ease;
+
+    &.affix {
+      top: 45px;
+    }
+  }
+}

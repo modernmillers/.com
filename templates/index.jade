@@ -1,0 +1,28 @@
+extends layout
+
+block content
+
+    div.home-content.collection
+        if paginate
+            each file, i in collections.posts
+                if i == 0
+                    div.featured.col-sm-12
+                        div.folded
+                            h2 <i class="fa fa-star"></i> Featured
+                        header.content-header
+                            a(href='/' + file.path, style="background-image: url(#{file.banner})")
+                            div.header-metadata
+                                time.timestamp(datetime=file.date)= moment(file.date).format('MMM D, YYYY')
+                            h2.content-title
+                                span= file.title
+                        section.content-article!= file.snippet
+                 else
+                    div.non-featured.col-sm-6
+                        article.content
+                        header.content-header
+                            a(href='/' + file.path, style="background-image: url(#{file.banner})")
+                            div.header-metadata
+                                time.timestamp(datetime=file.date)= moment(file.date).format('MMM D, YYYY')
+                            h2.content-title
+                                span= file.title
+                        section.content-article!= file.snippet

@@ -1,0 +1,42 @@
+extends layout
+
+<!-- Update Browser Title -->
+block prepend title
+  | #{title + " • "}
+
+
+div.flare
+block content
+
+   header.content-header
+       div.folded.hidden
+           h2!=title
+               p.date= moment(date).format('MMMM D, YYYY')
+
+       if pin
+        img(src="#{pin}")
+       else if banner
+        img(src="#{banner}")
+
+    article.content-article!= contents
+
+    <!-- Filamentapp.com Flare Share Integration -->
+    if integrations.filament 
+        script(data-cfasync="false" type="text/javascript" src="//filamentapp.s3.amazonaws.com/815046ae087d51213f38325f21b2262f.js" async)
+    <!-- Addthis.com Share Integration -->
+    if integrations.addThis 
+        script(type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5461c3b773abe1d2")
+
+    if integrations.disqus
+
+        div#disqus_thread
+
+        script.
+            var disqus_identifier = "#{title}";
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//#{integrations.disqus}.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
