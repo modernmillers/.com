@@ -1,7 +1,7 @@
 {
   "name": "modernmillers.com",
-  "version": "0.3.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "modernmillers.com blog",
   "private": true,
   "devDependencies": {
     "grunt": "^0.4.5",
@@ -41,7 +41,7 @@
     "postinstall": "bower install",
     "test": "write-good src/my/posts/**/*.md",
     "build": "node build.js",
-    "deploy": "npm run dist-build && cd build && git init . && git add . && git commit -m \"Deploy\"; git push \"git@bitbucket.org:cmille142/modernmillers.git\" master:gh-pages --force && rm -rf .git"
+    "deploy": "npm run dist-build && cd build && git init . && git add . && git commit -m \"Deploy\"; git push \"git@github.com:modernmillers/modernmillers.com.git\" master:gh-pages --force && rm -rf .git"
   },
   "repository": {
     "type": "git",
