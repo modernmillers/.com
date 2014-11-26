@@ -8,24 +8,42 @@ meta(name="robots", content="#{seo.robots}")
 link(rel="canonical", href="#{seo.canonical}")
 link(rel='author', href='https://twitter.com/modernmillers')
 
-<!-- Open Graph Protocol -->
-meta(proprty="og:type" content="website")
-meta(proprty="og:url" content="#{seo.canonical}")
+<!-- Open Graph / Twitter / Schema.org -->
+meta(property="og:type" content="website")
+meta(property="og:url" content="#{seo.canonical}")
+meta(property="twitter:url" content="#{seo.canonical}")
+meta(property="twitter:card" content="summary")
+
+if seo.ogp.twitterHandle
+    meta(property="twitter:site" content="#{seo.ogp.twitterHandle}")
+    meta(property="twitter:creator" content="#{seo.ogp.twitterHandle}")
 
 if seo.ogp.title
-    meta(proprty="og:title" content="#{seo.ogp.title}")
+    meta(itemprop="name" content="#{seo.ogp.title}")
+    meta(property="twitter:title" content="#{seo.ogp.title}")
+    meta(property="og:title" content="#{seo.ogp.title}")
 else
-    meta(proprty="og:title" content="#{blog.title}")
+    meta(itemprop="name" content="#{blog.title}")
+    meta(property="og:title" content="#{blog.title}")
+    meta(property="twitter:title" content="#{blog.title}")
 
 if snippet
-    meta(proprty="og:description" content="#{snippet}")
+    meta(itemprop="description" content="#{snippet}")
+    meta(property="og:description" content="#{snippet}")
+    meta(property="twitter:description" content="#{snippet}")
 else
-    meta(proprty="og:description" content="#{blog.description}")
+    meta(itemprop="description" content="#{blog.description}")
+    meta(property="og:description" content="#{blog.description}")
+    meta(property="twitter:description" content="#{blog.description}")
 
 if seo.ogp.image
-    meta(proprty="og:image" content="#{seo.ogp.image}")
+    meta(itemprop="image" content="#{seo.ogp.image}")
+    meta(property="og:image" content="#{seo.ogp.image}")
+    meta(property="twitter:image" content="#{seo.ogp.image}")
 else
-    meta(proprty="og:image" content="#{seo.ogp.defaultImage}")
+    meta(itemprop="image" content="#{seo.ogp.image}")
+    meta(property="og:image" content="#{seo.ogp.defaultImage}")
+    meta(property="twitter:image" content="#{seo.ogp.defaultImage}")
 
 title
     block title

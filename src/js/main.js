@@ -1,6 +1,8 @@
-/* global $ */
+/* global document, $ */
 
 var app = {
+
+  body : document.body,
 
   navbarIdentifier : '.navbar',
 
@@ -8,15 +10,20 @@ var app = {
 
   sidebarContainer : '.sidebar',
 
+  lightboxIdentifier : '.lightbox',
+
   start : function () {
     this.initNavbar();
     this.initImageModals();
+    this.initFastClick();
   },
 
   initImageModals : function () {
     //Bind to the Lightbox Data Attribute Objects
-    $('.lightbox').on('click', function(event) {
+    $(app.lightboxIdentifier)
+          .on('click', function (event) {
       event.preventDefault();
+      //Pass on to Lightbox
       $(this).ekkoLightbox();
     })
   },
@@ -27,18 +34,22 @@ var app = {
       $sidebarContainer = $(this.sidebarContainer);
 
     /*$sidebar.affix({
-      offset : {
-        top : $navbar.position().top
-      }
-    });
-    */
+     offset : {
+     top : $navbar.position().top
+     }
+     });
+     */
 
     $navbar.affix({
       offset : {
         top : $navbar.position().top
       }
     });
+  },
 
+  initFastClick : function () {
+    //300ms Delay Polyfill
+    FastClick.attach(app.body, {});
   }
 };
 

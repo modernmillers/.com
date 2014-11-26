@@ -15,6 +15,7 @@
     "respond": "~1.4.2",
     "momentjs": "~2.8.3",
     "ekko-lightbox": "~3.2.0",
-    "zepto": "~1.1.4"
+    "zepto": "~1.1.4",
+    "fastclick": "~1.0.3"
   }
 }

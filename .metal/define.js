@@ -12,7 +12,7 @@ var config = {
     dev : {
       blog : {
         uri         : "http://127.0.0.1:8000",
-        title       : "Thoroughly Modern Millers Development",
+        title       : "Thoroughly Modern Millers",
         description : "Making a creative home for the modern world"
       },
 

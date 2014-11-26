@@ -14,7 +14,8 @@ module.exports = {
         'vendor/bootstrap/js/modal.js',
         'vendor/bootstrap/js/collapse.js',
         'vendor/ekko-lightbox/dist/ekko-lightbox.js',
-        'vendor/momentjs/moment.js'
+        'vendor/momentjs/moment.js',
+        'vendor/fastclick/lib/fastclick.js'
       ]
     }
   }

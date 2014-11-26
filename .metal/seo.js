@@ -8,12 +8,13 @@ module.exports = {
 
   seo           : {
     title       : "Thoroughly Modern Millers",
-    description : "Creating a home that I love to share with you!"
+    description : "Making a creative home for the modern world"
   },
 
   ogp           : {
     defaultType        : "website",
-    defaultImage       : "http://modernmillers.com/assets/img/logo.jpg",
-    ignoreMissingImage : false
+    defaultImage       : "http://modernmillers.com/assets/img/min/logo.png",
+    ignoreMissingImage : false,
+    twitterHandle : "@modernmillers"
   }
 };
