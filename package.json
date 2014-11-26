@@ -40,8 +40,8 @@
   "scripts": {
     "postinstall": "bower install",
     "test": "write-good src/my/posts/**/*.md",
-    "build": "node build.js",
-    "deploy": "npm run dist-build && cd build && git init . && git add . && git commit -m \"Deploy Updates\"; git push \"git@github.com:modernmillers/.com.git\" master:gh-pages --force && rm -rf .git"
+    "build": "grunt dist-build",
+    "deploy": "npm run build && cd build && git init . && git add . && git commit -m \"Deploy Updates\"; git push \"git@github.com:modernmillers/.com.git\" master:gh-pages --force && rm -rf .git"
   },
   "repository": {
     "type": "git",
