@@ -1,0 +1,14 @@
+@import "variables";
+
+.btn {
+
+  &.btn-primary {
+    background-color : $color;
+    border : none;
+
+    &:hover {
+      background-color : $alt-color;
+    }
+  }
+
+}

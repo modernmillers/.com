@@ -1,0 +1,142 @@
+
+.navbar {
+
+  .navbar-nav > li > a {
+
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    color : $alt-color;
+  }
+
+  &.navbar-default {
+    border-top: 1px solid #8acadb;
+    border-bottom: 1px solid #8acadb;
+    background-color: #fff;
+  }
+
+  .navbar-brand {
+    font-size : .7em;
+    color : $color;
+
+    span {
+      &:hover {
+        color : $alt-color;
+      }
+    }
+
+    &:hover {
+      color : $color;
+    }
+  }
+
+  .brand {
+    &.short {
+      padding: 0;
+      color: white;
+      background-color: #d0ecf2;
+      font-size: 2em;
+      top: 2px;
+    }
+  }
+
+  &.affix {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index:10;
+  }
+
+  .navbar-brand {
+    text-transform : uppercase;
+    font-weight    : 900;
+    letter-spacing : 2px;
+  }
+
+  .navbar-nav {
+    text-transform : uppercase;
+    font-weight    : 400;
+    letter-spacing : 3px;
+  }
+}
+
+.navbar-wrapper {
+  min-height : 25px;
+}
+
+@media screen and (max-width : 767px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .main-container {
+    margin-top: 0;
+  }
+}
+@media screen and (min-width : 768px) {
+
+  .navbar-wrapper {
+    min-height : 75px;
+  }
+
+  .navbar-header {
+    display : none;
+  }
+
+  .navbar {
+    min-height    : 0;
+    border        : none;
+    background    : #d0ecf2;
+    border-bottom : 2px solid #fff;
+    border-radius : 0;
+
+    &.affix {
+
+      .navbar-nav > li > a {
+        padding: 10px 35px;
+      }
+    }
+
+    .navbar-nav > li > a {
+      padding     : 15px 35px;
+      font-weight : 100;
+      line-height : normal;
+      font-size: .9em;
+    }
+
+    .navbar-nav {
+      display      : table;
+      float        : none;
+      margin       : 0 auto;
+      table-layout : fixed;
+      font-size    : 1.25em;
+    }
+
+  }
+
+}
+
+@media screen and (max-width : 1200px) {
+
+  .navbar {
+
+    &.affix {
+
+      .navbar-nav > li > a {
+        padding : 10px 16px;
+      }
+
+    }
+
+    .navbar-nav > li > a {
+      padding : 25px 16px;
+      font-size: .8em;
+    }
+  }
+
+
+}
